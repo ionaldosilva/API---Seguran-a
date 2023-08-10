@@ -24,7 +24,7 @@ class CursosTestCase(APITestCase):
         response = self.client.delete('/cursos/1/',)
         self.assertEquals(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
-    def test_requisicao_pu_para_atualizar_curso(self):
+    def test_requisicao_put_para_atualizar_curso(self):
         data = {'codigo_curso':'CDTES1-AT','descricao':'Curso Teste Atualizado','nivel':'B'}
         response = self.client.put('/cursos/1/', data=data)
         self.assertEquals(response.status_code, status.HTTP_200_OK)
